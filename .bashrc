@@ -4,11 +4,12 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export PS1='\033[96m\w\033[0m:\n∴ '
 
 alias ..='cd ..' # test
-alias cmt='git commit -am'
+alias cmt='git commit -m'
 alias stat='git status'
 alias psh='git push'
 alias pll='git pull'
-alias gadd='git add .'
+alias gadd='git add'
+alias gaa='git add --all .'
 alias haha='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 # alias haha='/Applications/Atom.app/Contents/Resources/app/atom.sh'
 alias hahabrc='haha ~/.bashrc'
@@ -21,7 +22,7 @@ alias sshl='ssh csadmin@lexos.wheatoncollege.edu'
 # alias dbase='/usr/local/mysql/bin/mysql'
 # alias dbaser='sudo /usr/local/mysql/bin/mysql -p'
 # alias dbstart='sudo /usr/local/mysql/support-files/mysql.server start'
-alias openwork='haha source/*; haha headers/*'
+alias openwork='haha source/*.cpp; haha headers/*.h'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
