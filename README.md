@@ -1,7 +1,8 @@
 dotfiles
 ========
 
-All my dotfiles (mostly just .bashrc and .bash_profile...)
+All my dotfiles (mostly just .bashrc and .bash_profile...).
+Has branches for each of the common OS's I use (currently just Mac OSX and Ubuntu).
 
 Make sure to symlink from the home directory to the dotfiles in this repo, removing the old file:
 
