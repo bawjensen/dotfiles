@@ -8,7 +8,7 @@ alias cmt='git commit -m'
 alias stat='git status'
 alias psh='git push'
 alias pll='git pull'
-alias gadd='git add'
+alias gadd='git add --all'
 alias gaa='git add --all .'
 alias haha='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 # alias haha='/Applications/Atom.app/Contents/Resources/app/atom.sh'
@@ -26,7 +26,12 @@ alias openwork='haha source/*.cpp; haha headers/*.h'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-# Added for MySQL
+
+# Manually added for MySQL
 export PATH=$PATH:/usr/local/mysql/bin
 
-export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
+# Manually added for 
+export PATH="/usr/local/Cellar/git/2.2.1/bin:$PATH"
+
+# Removed (what's it for?)
+# export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
