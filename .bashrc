@@ -5,6 +5,7 @@ export PS1='\033[96m\w\033[0m:\n∴ '
 
 alias ..='cd ..' # test
 alias cmt='git commit -m'
+alias cmta='git commit -am'
 alias stat='git status'
 alias psh='git push'
 alias pll='git pull'
