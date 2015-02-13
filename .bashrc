@@ -1,10 +1,10 @@
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-export PS1='\033[96m\w\033[0m:\n∴ '
+export PS1='\033[92m\w\033[0m:\n∴ '
 
 # General purpose aliases
-alias haha='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias haha='nano'
 alias ..='cd ..' # test
 
 # Github aliases
@@ -57,13 +57,13 @@ export PATH="/usr/local/Cellar/git/2.2.1/bin:$PATH"
 
 
 # added by Anaconda 1.8.0 installer
-export PATH="/Users/bryanjensen/anaconda/bin:$PATH"
+# export PATH="/Users/bryanjensen/anaconda/bin:$PATH" # Removed on gcloud
 
 # added manually for rbenv (installed via homebrew)
-export PATH="$HOME/.rbenv/bin:$PATH"
+# export PATH="$HOME/.rbenv/bin:$PATH" # Removed on gcloud
 
 # added manually for rbenv (installed via homebrew)
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)" # Removed on gcloud
 
 # added manually for gradle (installed via download)
 GRADLE_HOME=/Applications/gradle;
@@ -71,7 +71,7 @@ export GRADLE_HOME
 export PATH=$PATH:$GRADLE_HOME/bin
 
 # The next line updates PATH for the Google Cloud SDK.
-source '/Users/bryanjensen/google-cloud-sdk/path.bash.inc'
+# source '/Users/bryanjensen/google-cloud-sdk/path.bash.inc' # Removed on gcloud
 
 # The next line enables bash completion for gcloud.
-source '/Users/bryanjensen/google-cloud-sdk/completion.bash.inc'
+# source '/Users/bryanjensen/google-cloud-sdk/completion.bash.inc' # Removed on gcloud
