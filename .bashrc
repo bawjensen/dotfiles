@@ -3,27 +3,45 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 
 export PS1='\033[96m\w\033[0m:\n∴ '
 
+# General purpose aliases
+alias haha='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias ..='cd ..' # test
-alias cmt='git commit -m'
-alias cmta='git commit -am'
+
+# Github aliases
+alias cm='git commit -m'
+alias cmt='git commit -am'
 alias stat='git status'
-alias psh='git push'
-alias pll='git pull'
 alias gadd='git add --all'
 alias gaa='git add --all .'
-alias haha='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-# alias haha='/Applications/Atom.app/Contents/Resources/app/atom.sh'
+# alias psh='git push'
+# alias pll='git pull'
+
+# Dot file shortcuts
 alias hahabrc='haha ~/.bashrc'
 alias hahabpf='haha ~/.bash_profile'
-alias lhost='jekyll serve --watch'
+
+# Wheaton ssh aliases
 alias sshw='ssh bryan@whale.wheatoncollege.edu'
 alias sshwa='ssh barbara@whale.wheatoncollege.edu'
 alias sshwr='ssh root@whale.wheatoncollege.edu'
 alias sshl='ssh csadmin@lexos.wheatoncollege.edu'
+alias sshl='ssh csadmin@lexos.wheatoncollege.edu'
+
+# bawjensen.github.io alises
+alias lhost='jekyll serve --watch'
+alias jccw='jade -cw *.jade'
+
+# MySQL aliases
 # alias dbase='/usr/local/mysql/bin/mysql'
 # alias dbaser='sudo /usr/local/mysql/bin/mysql -p'
 # alias dbstart='sudo /usr/local/mysql/support-files/mysql.server start'
+
+# 499IR aliases
 alias openwork='haha source/*.cpp; haha headers/*.h'
+
+# BuildsAndSkills Environment Variables
+export RIOT_KEY='65b78778-0e3d-4192-9100-e15f0116c143'
+export MONGOLAB_URI='mongodb://heroku_app33050572:rvaio72r9o0s8cpv4tgr2mj6af@ds031531.mongolab.com:31531/heroku_app33050572'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -36,3 +54,24 @@ export PATH="/usr/local/Cellar/git/2.2.1/bin:$PATH"
 
 # Removed (what's it for?)
 # export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
+
+
+# added by Anaconda 1.8.0 installer
+export PATH="/Users/bryanjensen/anaconda/bin:$PATH"
+
+# added manually for rbenv (installed via homebrew)
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+# added manually for rbenv (installed via homebrew)
+eval "$(rbenv init -)"
+
+# added manually for gradle (installed via download)
+GRADLE_HOME=/Applications/gradle;
+export GRADLE_HOME
+export PATH=$PATH:$GRADLE_HOME/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/bryanjensen/google-cloud-sdk/path.bash.inc'
+
+# The next line enables bash completion for gcloud.
+source '/Users/bryanjensen/google-cloud-sdk/completion.bash.inc'
