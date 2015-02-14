@@ -40,7 +40,7 @@ alias jccw='jade -cw *.jade'
 alias openwork='haha source/*.cpp; haha headers/*.h'
 
 # Builds and Skills environment variables, sensitive info
-source '../envvars/buildsandskills.bash.inc'
+source '/Users/bryanjensen/Desktop/envvars/buildsandskills.bash.inc'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
