@@ -39,6 +39,7 @@ alias jccw='jade -cw *.jade'
 # 499IR aliases
 alias openwork='haha source/*.cpp; haha headers/*.h'
 
+# Builds and Skills environment variables, sensitive info
 source '../envvars/buildsandskills.bash.inc'
 
 ### Added by the Heroku Toolbelt
