@@ -39,9 +39,7 @@ alias jccw='jade -cw *.jade'
 # 499IR aliases
 alias openwork='haha source/*.cpp; haha headers/*.h'
 
-# BuildsAndSkills Environment Variables
-export RIOT_KEY='65b78778-0e3d-4192-9100-e15f0116c143'
-export MONGOLAB_URI='mongodb://heroku_app33050572:rvaio72r9o0s8cpv4tgr2mj6af@ds031531.mongolab.com:31531/heroku_app33050572'
+source '../envvars/buildsandskills.bash.inc'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
