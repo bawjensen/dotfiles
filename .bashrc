@@ -1,7 +1,7 @@
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-export PS1='\033[92m\w\033[0m:\n∴ '
+export PS1='\033[96m\w\033[0m:\n∴ '
 
 # General purpose aliases
 alias haha='nano'
@@ -40,7 +40,7 @@ alias jccw='jade -cw *.jade'
 alias openwork='haha source/*.cpp; haha headers/*.h'
 
 # Builds and Skills environment variables, sensitive info
-source '/home/bryanjensen/envvars/buildsandskills.bash.inc'
+source '/Users/bryanjensen/Desktop/envvars/buildsandskills.bash.inc'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -56,13 +56,13 @@ export PATH="/usr/local/Cellar/git/2.2.1/bin:$PATH"
 
 
 # added by Anaconda 1.8.0 installer
-# export PATH="/Users/bryanjensen/anaconda/bin:$PATH" # Removed on gcloud
+export PATH="/Users/bryanjensen/anaconda/bin:$PATH"
 
 # added manually for rbenv (installed via homebrew)
-# export PATH="$HOME/.rbenv/bin:$PATH" # Removed on gcloud
+export PATH="$HOME/.rbenv/bin:$PATH"
 
 # added manually for rbenv (installed via homebrew)
-# eval "$(rbenv init -)" # Removed on gcloud
+eval "$(rbenv init -)"
 
 # added manually for gradle (installed via download)
 GRADLE_HOME=/Applications/gradle;
@@ -70,7 +70,7 @@ export GRADLE_HOME
 export PATH=$PATH:$GRADLE_HOME/bin
 
 # The next line updates PATH for the Google Cloud SDK.
-# source '/Users/bryanjensen/google-cloud-sdk/path.bash.inc' # Removed on gcloud
+source '/Users/bryanjensen/google-cloud-sdk/path.bash.inc'
 
 # The next line enables bash completion for gcloud.
-# source '/Users/bryanjensen/google-cloud-sdk/completion.bash.inc' # Removed on gcloud
+source '/Users/bryanjensen/google-cloud-sdk/completion.bash.inc'
