@@ -4,7 +4,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export PS1='\033[96m\w\033[0m:\n∴ '
 
 # General purpose aliases
-alias haha='nano'
+alias haha='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias ..='cd ..' # test
 
 # Github aliases
