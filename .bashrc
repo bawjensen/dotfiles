@@ -2,7 +2,6 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # General purpose aliases
-alias haha='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias ..='cd ..'
 alias nhs='node --harmony --use_strict'
 
