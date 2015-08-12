@@ -5,9 +5,10 @@ export PS1='\033[96m\w\033[0m:\n∴ '
 
 # General purpose aliases
 alias haha='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias ..='cd ..' # test
+alias ..='cd ..'
+alias nhs='node --harmony --use_strict'
 
-# Github aliases
+# Git aliases
 alias cm='git commit -m'
 alias cmt='git commit -am'
 alias stat='git status'
@@ -76,3 +77,8 @@ source '/Users/bryanjensen/google-cloud-sdk/path.bash.inc'
 
 # The next line enables bash completion for gcloud.
 source '/Users/bryanjensen/google-cloud-sdk/completion.bash.inc'
+
+# Setting PATH for Python 3.4
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
+export PATH
