@@ -41,4 +41,5 @@ alias openwork='haha source/*.cpp; haha headers/*.h'
 alias bashost='nodemon web.js --be_ip localhost:27017'
 alias basdb='mongod --dbpath ./db --port 27017 --logpath /tmp/mongodb'
 
+# The following line's should contain any platform specific bashrc stuff, like sourced files with absolute paths
 source ~/.platform_specific_bashrc

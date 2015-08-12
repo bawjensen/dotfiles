@@ -1,6 +1,8 @@
 # Color the prompt
 export PS1='\033[96m\w\033[0m:\n∴ '
 
+alias haha='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
 # Builds and Skills environment variables, sensitive info
 source '/Users/bryanjensen/Desktop/envvars/buildsandskills.bash.inc'
 
