@@ -6,6 +6,9 @@ alias haha='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 # Builds and Skills environment variables, sensitive info
 source '/Users/bryanjensen/Desktop/envvars/buildsandskills.bash.inc'
 
+# Riot API Challenge v2 environment variables, sensitive info
+source '/Users/bryanjensen/Desktop/envvars/api-challenge.bash.inc'
+
 # Whale Web environment variables, sensitive info
 source '/Users/bryanjensen/Desktop/envvars/whaleweb.bash.inc'
 
