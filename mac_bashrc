@@ -18,6 +18,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Manually added for MySQL
 export PATH=$PATH:/usr/local/mysql/bin
 
+# Manually added for Golang installation (https://golang.org/doc/install?download=go1.5.1.darwin-amd64.pkg)
+export GOPATH=$HOME/Desktop/go-projects
+
 # added by Anaconda 1.8.0 installer
 export PATH="/Users/bryanjensen/anaconda/bin:$PATH"
 
