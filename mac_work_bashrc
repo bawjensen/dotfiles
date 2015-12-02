@@ -1,0 +1,47 @@
+# Color the prompt
+export PS1='\033[92m\w\033[0m:\n∴ '
+
+alias haha='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
+# Added manually for homebrew
+export PATH=/usr/local/bin:$PATH
+
+# Manually added for Git (installed via Homebrew)
+source '/usr/local/etc/bash_completion.d/git-completion.bash'
+
+# Unneeded because PHP is already correctly symlinked from /usr/local/bin (?)
+# export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+
+# auto_uploader
+alias autoupload="~/Thumbtack/auto_uploader/auto_uploader"
+
+alias sshf="ssh farnsworth-bjensen.dev-internal"
+alias sshtun='ssh -R 9000:localhost:9000 farnsworth-bjensen.dev-internal'
+
+
+DB_PORT=5434
+DB_HOST=development-pg-replica-03
+# WEBSITE_DIR='/srv/thumbtack/current'
+
+# alias phpunit="$WEBSITE_DIR/vendor/php/composer/vendor/phpunit/phpunit/phpunit --colors -c $WEBSITE_DIR/config/phpunit/base.xml"
+# alias test_website="use_db=true source_dbname=thumbtack source_dbhost=$DB_HOST source_dbuser=db_read_write source_dbport=$DB_PORT phpunit"
+# alias migrate="/opt/thumbtack/bin/thumbtack.flatbed.migrate --postgres-host $DB_HOST --postgres-port $DB_PORT --postgres-database thumbtack $WEBSITE_DIR"
+# alias dynamo_sync="sudo -u www-data php /srv/thumbtack/current/bin/sync/dynamodb_tables.php"
+# alias sqs_sync="sudo -u www-data php /srv/thumbtack/current/bin/sync/sqs_queues.php"
+# alias sync="migrate && sqs_sync && dynamo_sync"
+
+alias db="psql -U db_read_write --host $DB_HOST --port $DB_PORT thumbtack"
+# alias cylon="psql --host internal-pg-readonly.dev-internal -U db_read_only thumbtack"
+
+# runtest_db(){
+#     use_db=true source_dbname=thumbtack source_dbhost=$DB_HOST source_dbuser=db_read_write source_dbport=$DB_PORT \
+#     phpunit $1 $2
+# }
+
+# error_log(){
+#    sudo tail -f /var/log/apache2/`echo $USER`_error.log | sed -e 's/\\n/\n\r/g'
+# }
+
+# access_log(){
+#    sudo tail -f /var/log/apache2/`echo $USER`_access_log | sed -e 's/\\n/\n\r/g'
+# }
