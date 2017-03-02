@@ -1,0 +1,27 @@
+alias haha='vim'
+
+DB_PORT=5434
+DB_HOST=dev-website-pg94replica-latency003.dev-internal
+WEBSITE_DIR='/srv/thumbtack/current'
+
+alias php_unit_tests="make -C $WEBSITE_DIR php_unit_tests"
+alias php_db_tests="make -C $WEBSITE_DIR php_db_tests"
+alias test_website='use_db=true phpunit'
+alias phpunit="$WEBSITE_DIR/vendor/php/composer/vendor/phpunit/phpunit/phpunit --colors -c $WEBSITE_DIR/config/phpunit/base.xml"
+alias db="psql -U website_master_write --host $DB_HOST --port $DB_PORT thumbtack"
+alias prod-db="psql --host $DB_HOST -U website_latency_read thumbtack"
+ 
+alias migrate="/opt/thumbtack/bin/thumbtack.flatbed.migrate --postgres-host $DB_HOST --postgres-port $DB_PORT --postgres-database thumbtack --postgres-user postgres $WEBSITE_DIR"
+alias sqs_sync="sudo -u www-data php /srv/thumbtack/current/bin/sync/sqs_queues.php"
+alias dynamo_sync="sudo -u www-data php /srv/thumbtack/current/bin/sync/dynamodb_tables.php"
+alias sync="migrate && sqs_sync && dynamo_sync"
+ 
+# This makes it easier to see error logs
+errors() { sudo tail -F /var/log/apache2/error.log | sed -e 's/\\n/\n/g'; }
+# This makes it easier to see js error logs
+js_errors() { sudo tail -F /var/log/php/javascript_thirdparty.log -F /var/log/php/javascript_internal.log | sed -e 's/\\n/\n/g'; }
+# A quick way to see all logs # (replace XX with your username)
+alias logs="sudo tail  -f /var/log/apache2/bjensen_access_log /var/log/apache2/access.log /var/log/apache2/bjensen_error_log /var/log/apache2/bjensen_access.log /var/log/apache2/error.log /var/log/apache2/bjensen_error.log /var/log/apache2/other_vhosts_access.log"
+
+# alias cylon="psql --host internal-pg-readonly.dev-internal -U db_read_only thumbtack"
+
