@@ -1,10 +1,26 @@
+#!/bin/bash
+
 # Color the prompt
 export PS1='\033[92m\w\033[0m:\n∴ '
 
+# Setting PATH for Python 3.4
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
+export PATH
+
+export NVM_DIR="/Users/bjensen/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
 alias haha='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias aga='ag --ignore={public/_assets/,vendor/,thumbprint/legacy-js/vendor/,thumbprint/legacy-js/admin/,public/media/,thumbprint/legacy-js/labs/}'
+alias chrome='open -a "Google Chrome"'
 
 # Added manually for homebrew
 export PATH=/usr/local/bin:$PATH
+
+# Added manually for Thumbtack's phpcs
+export PHP_COMPOSER_VENDOR_PATH="$HOME/Thumbtack/website/vendor/php/composer/vendor/bin"
+export PATH=$PHP_COMPOSER_VENDOR_PATH:$PATH
 
 # Manually added for Git (installed via Homebrew)
 source '/usr/local/etc/bash_completion.d/git-completion.bash'
@@ -14,34 +30,22 @@ source '/usr/local/etc/bash_completion.d/git-completion.bash'
 
 # auto_uploader
 alias autoupload="~/Thumbtack/auto_uploader/auto_uploader"
+# tt-sync
+alias myttsync="ttsync --source ~/Thumbtack/website/ --destination farnsworth-bjensen.dev-internal:/srv/thumbtack/code/"
+# monorepo-builder
+alias mymrb="CONVEYOR_PG_HOST='conveyor-postgres' CONVEYOR_PG_SSL_MODE='disable' CONVEYOR_PG_PORT=5432 CONVEYOR_PG_USER='conveyor' CONVEYOR_PG_NAME='conveyor' CONVEYOR_PG_PASS='conveyor' monorepo-builder -s conveyor --staging-ground ~/testing-grounds/ -p 3000"
+# docker start new terminal
+alias dockerterm="docker exec -i -t"
+# dev experiment service ssh tunnel
+alias exptun="ssh -N us-west-2.ssh.thumbtack.com -L 9000:dev-experiment-web.thumbtack.io:80"
 
 alias sshf="ssh farnsworth-bjensen.dev-internal"
+alias sshf2="ssh farnsworth-bjensen-2.dev-internal"
 alias sshtun='ssh -R 9000:localhost:9000 farnsworth-bjensen.dev-internal'
 
+export GOPATH="$HOME/go-work"
+export PATH=$GOPATH/bin:$PATH
 
-DB_PORT=5434
-DB_HOST=development-pg-replica-03
-# WEBSITE_DIR='/srv/thumbtack/current'
-
-# alias phpunit="$WEBSITE_DIR/vendor/php/composer/vendor/phpunit/phpunit/phpunit --colors -c $WEBSITE_DIR/config/phpunit/base.xml"
-# alias test_website="use_db=true source_dbname=thumbtack source_dbhost=$DB_HOST source_dbuser=db_read_write source_dbport=$DB_PORT phpunit"
-# alias migrate="/opt/thumbtack/bin/thumbtack.flatbed.migrate --postgres-host $DB_HOST --postgres-port $DB_PORT --postgres-database thumbtack $WEBSITE_DIR"
-# alias dynamo_sync="sudo -u www-data php /srv/thumbtack/current/bin/sync/dynamodb_tables.php"
-# alias sqs_sync="sudo -u www-data php /srv/thumbtack/current/bin/sync/sqs_queues.php"
-# alias sync="migrate && sqs_sync && dynamo_sync"
-
-alias db="psql -U db_read_write --host $DB_HOST --port $DB_PORT thumbtack"
-# alias cylon="psql --host internal-pg-readonly.dev-internal -U db_read_only thumbtack"
-
-# runtest_db(){
-#     use_db=true source_dbname=thumbtack source_dbhost=$DB_HOST source_dbuser=db_read_write source_dbport=$DB_PORT \
-#     phpunit $1 $2
-# }
-
-# error_log(){
-#    sudo tail -f /var/log/apache2/`echo $USER`_error.log | sed -e 's/\\n/\n\r/g'
-# }
-
-# access_log(){
-#    sudo tail -f /var/log/apache2/`echo $USER`_access_log | sed -e 's/\\n/\n\r/g'
-# }
+export AWS_ACCESS_KEY_ID=AKIAJTCPVUKIZU6VZJYQ
+export AWS_SECRET_ACCESS_KEY=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
+export CONVEYOR_PG_HOST="conveyor-postgres"
