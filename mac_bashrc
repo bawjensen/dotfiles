@@ -12,6 +12,9 @@ source '/Users/bryanjensen/Desktop/envvars/api-challenge.bash.inc'
 # Whale Web environment variables, sensitive info
 source '/Users/bryanjensen/Desktop/envvars/whaleweb.bash.inc'
 
+# Whale Web environment variables, sensitive info
+source '/Users/bryanjensen/Desktop/envvars/insightly.bash.inc'
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -48,3 +51,9 @@ source '/Users/bryanjensen/google-cloud-sdk/completion.bash.inc'
 # The orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 export PATH
+
+# Setting PATH for LaTeX
+export PATH=/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin:$PATH
+
+export NVM_DIR="/Users/bryanjensen/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
