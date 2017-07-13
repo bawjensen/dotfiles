@@ -17,5 +17,5 @@ alias dynamo_sync="sudo -u www-data php /srv/thumbtack/current/bin/sync/dynamodb
 alias sync="migrate && sqs_sync && dynamo_sync"
  
 # This makes it easier to see error logs
-alias errors="sudo tail -F /var/log/apache2/error.log | grep --line-buffered -E '\[level (error|fatal)\]' | sed 's/\\\n/\n/g'"
+alias errors="sudo tail -F /var/log/apache2/error.log | grep --line-buffered -Ev '\[level (debug|info)\]' | sed 's/\\\n/\n/g'"
 
