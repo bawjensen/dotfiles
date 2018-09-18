@@ -17,15 +17,17 @@ alias gaa='git add --all .'
 alias gbr='git branch -v'
 alias gck='git checkout'
 alias grb='git rebase -i origin/master'
-alias gmg='git commit -a --amend --no-edit'
+alias gmg='git commit -a --amend --no-edit --date="$(date)"'
 alias gam='git commit --amend'
 alias gpr='git pull --rebase origin master'
+alias gd='git branch -D'
 # alias psh='git push'
 # alias pll='git pull'
 
 # Dot file shortcuts
 alias hahabrc='haha ~/.bashrc'
 alias hahabpf='haha ~/.bash_profile'
+alias hahaps='haha ~/.platform_specific_bashrc'
 
 # Wheaton ssh aliases
 alias sshw='ssh bryan@whale.wheatoncollege.edu'

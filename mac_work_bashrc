@@ -9,8 +9,14 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 export PATH
 
 alias haha='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias aga='ag --ignore={public/_assets/,vendor/,thumbprint/legacy-js/vendor/,thumbprint/legacy-js/admin/,public/media/,thumbprint/legacy-js/labs/}'
+alias aga='ag -s --color-path "1;36" --ignore={public/_assets/,vendor/,thumbprint/legacy-js/vendor/,thumbprint/legacy-js/admin/,public/media/,node_modules/,dist/}'
 alias chrome='open -a "Google Chrome"'
+
+alias lg='~/.okta/logind'
+alias okl='okta-login admin'
+
+# iOS alias(es)
+alias podi='bundle exec pod install || bundle exec pod install --repo-update'
 
 # Added manually for homebrew
 export PATH=/usr/local/bin:$PATH
@@ -22,28 +28,27 @@ export PATH=$PHP_COMPOSER_VENDOR_PATH:$PATH
 # Manually added for Git (installed via Homebrew)
 source '/usr/local/etc/bash_completion.d/git-completion.bash'
 
-# Unneeded because PHP is already correctly symlinked from /usr/local/bin (?)
-# export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-
-# auto_uploader
-alias autoupload="~/Thumbtack/auto_uploader/auto_uploader"
-# tt-sync
-alias myttsync="ttsync --source ~/Thumbtack/website/ --destination farnsworth-bjensen.dev-internal:/srv/thumbtack/code/"
-# monorepo-builder
-alias mymrb="CONVEYOR_PG_HOST='conveyor-postgres' CONVEYOR_PG_SSL_MODE='disable' CONVEYOR_PG_PORT=5432 CONVEYOR_PG_USER='conveyor' CONVEYOR_PG_NAME='conveyor' CONVEYOR_PG_PASS='conveyor' monorepo-builder -s conveyor --staging-ground ~/testing-grounds/ -p 3000"
-# docker start new terminal
-alias dockerterm="docker exec -i -t"
-# dev experiment service ssh tunnel
-alias exptun="ssh -N us-west-2.ssh.thumbtack.com -L 9000:dev-experiment-web.thumbtack.io:80"
-
-alias sshf="ssh farnsworth-bjensen.dev-internal"
-alias sshf2="ssh farnsworth-bjensen-2.dev-internal"
-alias sshtun='ssh -R 9000:localhost:9000 farnsworth-bjensen.dev-internal'
-
 export GOPATH="$HOME/go-work"
 export PATH=$GOPATH/bin:$PATH
 
-export CONVEYOR_PG_HOST="conveyor-postgres"
+# Manually added for iOS dev env setup
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
+
+export TT_WEBSITE_DIR=$HOME/Thumbtack/website
+export TT_PG_SCHEMA_DIR=$HOME/Thumbtack/postgres-schema
 
 export NVM_DIR="/Users/bjensen/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# eval "$(rbenv init -)"
+
+okta-login() {
+    if [[ -z "$1" ]]; then
+        >&2 echo 'Usage: okta-login <profile>';
+        return 1;
+    fi
+    export OKTA_PROFILE=$1
+    export AWS_PROFILE=$1_source
+    ~/.okta/login
+}
