@@ -31,15 +31,21 @@ source '/usr/local/etc/bash_completion.d/git-completion.bash'
 export GOPATH="$HOME/go-work"
 export PATH=$GOPATH/bin:$PATH
 
+
 # Manually added for iOS dev env setup
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
 
+# Added per the yoda installation instructions
+export PATH=/usr/local/go/bin:$PATH
+export PATH=/usr/local/opt/postgresql@9.6/bin:$PATH
 export TT_WEBSITE_DIR=$HOME/Thumbtack/website
+export TT_TOPHAT_DIR=/Users/bjensen/Thumbtack/tophat
 export TT_PG_SCHEMA_DIR=$HOME/Thumbtack/postgres-schema
 
-export NVM_DIR="/Users/bjensen/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # eval "$(rbenv init -)"
 

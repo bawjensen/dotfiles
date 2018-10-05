@@ -38,3 +38,7 @@ alias jccw='jade -cw *.jade'
 
 # The following line's should contain any platform specific bashrc stuff, like sourced files with absolute paths
 source ~/.platform_specific_bashrc
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
